@@ -1,0 +1,17 @@
+html {
+  --primary-color:#08367c;
+  --secondary-color:#A8EB12;
+  --primary-text-color: #ffffff;
+  --secondary-text-color:#20639b;
+}
+
+body{
+  background: url(https://source.unsplash.com/random/200x200);
+  background-repeat: no-repeat;
+  background-size: cover; /*contain*/
+  background-position: center center;
+  height: 100 vh; /* viewport heights */
+}
+h1 {
+  color: var(--primary-color);
+}
