@@ -10,6 +10,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover; /*contain*/
   background-position: center center;
+  font-family: 'Poppins', sans-serif;
   height: 100 vh; /* viewport heights */
 }
 h1 {
