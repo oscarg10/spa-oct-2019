@@ -26,8 +26,17 @@ p,
 li {
   font-size:1.777em;
 }
+
+figure,
+img {
+  max-width: 100%;
+}
+/* Limit the width of all 'figures' and 'imgs' to be most 100% of the size of the parent*/
 header {
   background-color: var(--primary-text-color);
   padding: 1rem;
   text-align: center;
+}
+ul{
+  list-style-type: none;
 }
