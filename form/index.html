@@ -25,7 +25,24 @@
       <li class ="button"><a href="">Gallery</a></li>
     </ul>
   </nav>
-  <main></main>
+  <main>
+    <!--For accessibility purposes, we make our lable for attributes match their ids for inputs-->
+    <form>
+    <div>
+      <label for="fName">First Name</label><input type="text" id="fName">
+    </div>
+    <div>
+      <label for="lName">Last Name:</label><input type="text" id="lName">
+    </div>
+    <div>
+      <label for="email">Email:</label><input type="text" id="email">
+    </div>
+    <div>
+      <label for="phone">Phone:</label><input type="text" id="phone">
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+  </main>
   <footer>
     &copy;2019 Savvy Coders
   </footer>
