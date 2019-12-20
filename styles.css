@@ -6,8 +6,8 @@ html {
 }
 /* fn + F9 */
 body{
-  background: url(https://source.unsplash.com/random/200x200) center center no-repeat;
-  background-size: cover; /*contain*/
+  background; white;
+  background-size: contain; /*contain*/
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
   height: 100 vh; /* viewport heights */
@@ -15,6 +15,8 @@ body{
 h1 {
   color: var(--primary-color);
   font-size:4.209em;
+  background-color: grey;
+  padding: 2rem;
 }
 h2{
   font-size:3.157em ;
@@ -30,6 +32,7 @@ li {
 figure,
 img {
   max-width: 100%;
+  justify-content: space-between;
 }
 /* Limit the width of all 'figures' and 'imgs' to be most 100% of the size of the parent*/
 header {
@@ -52,8 +55,41 @@ p{
   text-align: center;
 }
 footer{
-  background-color: var(--primary-text-color);
-  color: var(--primary-color)
+  background-color: #000000;
+  color: var(--primary-text-color);
   padding: 1rem;
   text-align: center;
+}
+.button{
+  background: var(--secondary-text-color);
+  color: var(--primary-text-color);
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+.button a{
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+.flex{
+  display: flex;
+}
+/* .button--circle{
+  border-radius: 50%;
+  width: 4rem;
+  heigth: 4rem;
+}*/
+.xs--hidden{
+  display:none;
+}
+@media screen and (min-width: 885px){
+  #hero{
+    background: url(https://source.unsplash.com/random/800x600) center center no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 40vh;
+  }
+  .flex--sm{
+    display: flex;
+  }
 }
