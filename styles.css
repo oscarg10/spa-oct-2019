@@ -4,7 +4,7 @@ html {
   --primary-text-color: #ffffff;
   --secondary-text-color:#20639b;
 }
-/* fn + F9 */
+/* fn + F9 formating */
 body{
   background; white;
   background-size: contain; /*contain*/
@@ -63,7 +63,7 @@ footer{
   border-radius: 4px;
   text-decoration: none;
   padding: 0.5rem;
-}
+  }
 .button a{
   text-decoration: none;
   color: var(--primary-text-color);
@@ -84,7 +84,7 @@ footer{
 }
 @media screen and (min-width: 885px){
   #hero{
-    background: url(https://source.unsplash.com/random/800x600) center center no-repeat;
+    background: url(https://source.unsplash.com/random/800x600) top center no-repeat;
     background-size: cover;
     width: 100vw;
     height: 40vh;
