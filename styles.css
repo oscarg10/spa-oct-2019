@@ -6,7 +6,7 @@ html {
 }
 /* fn + F9 formating */
 body{
-  background; white;
+  background: white;
   background-size: contain; /*contain*/
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
@@ -20,6 +20,8 @@ h1 {
 }
 h2{
   font-size:3.157em ;
+  text-align: center;
+  margin: 0;
 }
 h3{
   font-size:2.369em;
@@ -81,6 +83,19 @@ footer{
 }
 .justify-space-around{
   justify-content: space-around;
+}
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+​
+#gallery div {
+  background-color: magenta;
+  border-radius: 0.5rem;
+  box-shadow: 12px 12px 2px 1px rgba(255, 0, 255, 0.6);
+  margin: 2rem;
+  width: calc(33vw - 1rem);
+  text-align: center;
 }
 @media screen and (min-width: 885px){
   #hero{
