@@ -37,7 +37,11 @@
   The action attribute defines where on the server the form data should be sent
   The method attribute specifies the HTTP method (GET or POST)
 -->
-      <form action="forms/non-existent-form-handler.php" method="POST">
+      <form action="forms/non-existent-form-handler.php"
+      method="POST"
+      data-netlify ="true"
+      name="Contact"
+      >
         <div>
           <label for="name">Name:</label>
           <input type="text" name="name" id="name" placeholder="Full Name" />
@@ -113,6 +117,6 @@
     <footer>
       &copy;2019 Savvy Coders
     </footer>
-    <script src="../scripts.js"></script>
+    <!-- <script src="../scripts.js"></script> -->
   </body>
 </html>
