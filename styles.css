@@ -14,7 +14,8 @@ h1 {
   color: var(--text-primary-color);
   font-size: 4.209em;
 }
-h2 {
+h2,
+.fab {
   font-size: 3.157em;
   margin: 0;
 }
@@ -102,6 +103,12 @@ footer {
 }
 .justify-space-between {
   justify-content: space-between;
+}
+/* Pseudo-selector*/
+.button:focus,
+.button:hover{
+  background-color: aquamarine;
+  transition: ;
 }
 /* We set a breakpoint of 768px. */
 @media screen and (min-width: 768px) {
