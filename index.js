@@ -17,20 +17,23 @@ const state = {
     heading: "Gallery"
   }
 };
-//Query the document using a CSS selector
-document.querySelector("#root").innerHTML =
-  //Developer's note: Be sure to INVOKE each of the FUNCTIONAL COMPONENTS
-  `
-${Header(state.Home)}
-${Nav()}
-${Main()}
-${Footer()}
+function render(st = state.Home) {
+  //Query the document using a CSS selector
+  document.querySelector("#root").innerHTML =
+    //Developer's note: Be sure to INVOKE each of the FUNCTIONAL COMPONENTS
+    `
+${Header(st)}
+${Nav(st)}
+${Main(st)}
+${Footer(st)}
 `;
+}
+render();
 //TODO: Listen for clicks on our menu and log what was clicked on.
 document.querySelectorAll("nav a").forEach(link => {
   link.addEventListener("click", function(event) {
     event.preventDefault();
 
-    console.log(state[event.target.textContent]);
+    render(state[event.target.textContent]);
   });
 });
