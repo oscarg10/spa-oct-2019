@@ -26,3 +26,11 @@ ${Nav()}
 ${Main()}
 ${Footer()}
 `;
+//TODO: Listen for clicks on our menu and log what was clicked on.
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    console.log(state[event.target.textContent]);
+  });
+});
