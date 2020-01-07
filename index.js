@@ -18,8 +18,10 @@ const state = {
   }
 };
 //Query the document using a CSS selector
-document.querySelector("#root").innerHTML = `
-${Header()}
+document.querySelector("#root").innerHTML =
+  //Developer's note: Be sure to INVOKE each of the FUNCTIONAL COMPONENTS
+  `
+${Header(state.Home)}
 ${Nav()}
 ${Main()}
 ${Footer()}
