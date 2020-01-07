@@ -27,13 +27,13 @@ ${Nav(st)}
 ${Main(st)}
 ${Footer(st)}
 `;
+  //TODO: Listen for clicks on our menu and log what was clicked on.
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      render(state[event.target.textContent]);
+    });
+  });
 }
 render();
-//TODO: Listen for clicks on our menu and log what was clicked on.
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    render(state[event.target.textContent]);
-  });
-});
