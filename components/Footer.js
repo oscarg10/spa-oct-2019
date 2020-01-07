@@ -1,5 +1,5 @@
 //default indicates that we are exporting only one 'thing'
-export default `
+export default () => `
 <footer>
   &copy;2019 Savvy Coders
     <div class="flex justify-center">
