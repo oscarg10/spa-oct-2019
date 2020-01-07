@@ -17,10 +17,15 @@ const state = {
     heading: "Gallery"
   }
 };
+/**
+ *
+ * @param {Object} st - a piece of state
+ */
+
 function render(st = state.Home) {
   //Query the document using a CSS selector
   document.querySelector("#root").innerHTML =
-    //Developer's note: Be sure to INVOKE each of the FUNCTIONAL COMPONENTS
+    //INVOKE each FUNCTIONAL COMPONENT passing in a piece of state each time.
     `
 ${Header(st)}
 ${Nav(st)}
@@ -30,8 +35,14 @@ ${Footer(st)}
   //TODO: Listen for clicks on our menu and log what was clicked on.
   document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function(event) {
+      //'stop the link from linking'
       event.preventDefault();
 
+      /**
+       * Grab 'textContent from 'whoever' caused this event to fire.
+       * Providing that our 'link names' match up with a key in 'state',
+       * we can pass that piece of 'state' into our 'render' fxn.
+       */
       render(state[event.target.textContent]);
     });
   });
