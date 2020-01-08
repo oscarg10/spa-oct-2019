@@ -1,21 +1,24 @@
 // 'Destructoring' each of the named components from the components directories.
 import { Header, Nav, Main, Footer } from "./components";
+// this is a node_moduleso we don't include './'
+
+import capitalize from "lodash.capitalize";
 
 const state = {
   Home: {
     //This is just going to be a string that gets passed into our Header component
     heading: "Home"
   },
-  Form: {
-    //This is just going to be a string that gets passed into our Header component
-    heading: "Form"
-  },
   Blog: {
     heading: "Blog"
   },
   Gallery: {
     heading: "Gallery"
-  }
+  },
+  Contact: {
+    heading: "Contact"
+  },
+  Links: ["Home", "Blog", "Gallery", "Contact"]
 };
 /**
  *
@@ -28,7 +31,7 @@ function render(st = state.Home) {
     //INVOKE each FUNCTIONAL COMPONENT passing in a piece of state each time.
     `
 ${Header(st)}
-${Nav(st)}
+${Nav(state.Links)}
 ${Main(st)}
 ${Footer(st)}
 `;
@@ -43,7 +46,7 @@ ${Footer(st)}
        * Providing that our 'link names' match up with a key in 'state',
        * we can pass that piece of 'state' into our 'render' fxn.
        */
-      render(state[event.target.textContent]);
+      render(state[capitalize(event.target.textContent)]);
     });
   });
 }

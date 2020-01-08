@@ -1,10 +1,14 @@
-export default () => `
+function createListHTML(links) {
+  //Use join to change the array and make it a string separated by spaces
+  return links
+    .map(link => `<li class ="button"><a href="#">${link}</a></li>`)
+    .join(" ");
+}
+
+export default st => `
 <nav>
 <ul class="flex justify-space-around">
-  <li class ="button"><a href="#">Home</a></li>
-  <li class ="button"><a href="./form/">Form</a></li>
-  <li class ="button"><a href="">Blog</a></li>
-  <li class ="button"><a href="./gallery/">Gallery</a></li>
+  ${createListHTML(st)}
 </ul>
 </nav>
 `;
