@@ -1,4 +1,4 @@
-//default indicates that we are exporting only one 'thing'
+//default indicates that we are exporting only one 'thing' and it is anonymous
 export default () => `
 <footer>
   &copy;2019 Savvy Coders
