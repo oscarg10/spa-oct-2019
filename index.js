@@ -1,25 +1,10 @@
 // 'Destructoring' each of the named components from the components directories.
 import { Header, Nav, Main, Footer } from "./components";
 // this is a node_moduleso we don't include './'
+import * as state from "./store";
 
 import capitalize from "lodash.capitalize";
 
-const state = {
-  Home: {
-    //This is just going to be a string that gets passed into our Header component
-    heading: "Home"
-  },
-  Blog: {
-    heading: "Blog"
-  },
-  Gallery: {
-    heading: "Gallery"
-  },
-  Contact: {
-    heading: "Contact"
-  },
-  Links: ["Home", "Blog", "Gallery", "Contact"]
-};
 /**
  *
  * @param {Object} st - a piece of state
