@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"parcel build index.html && cp _redirects ./dist/",
+    "build": "parcel build index.html && cp _redirects ./dist/",
     "serve": "parcel index.html"
   },
   "keywords": [],
@@ -23,6 +23,8 @@
     "stylelint-vscode": "^7.0.0-6"
   },
   "dependencies": {
+    "@firebase/app": "^0.5.1",
+    "@firebase/firestore": "^1.9.2",
     "axios": "^0.19.1",
     "lodash.capitalize": "^4.2.1",
     "navigo": "^7.1.2"
