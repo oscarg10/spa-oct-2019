@@ -5,6 +5,16 @@ import * as state from "./store";
 
 import capitalize from "lodash.capitalize";
 
+import Navigo from "navigo";
+
+import axios from "axios";
+
+const router = new Navigo(location.origin);
+
+console.log(router);
+if (!location.pathname.slice(1) === "") {
+  render(state[capitalize(location.pathname.slice(1))]);
+}
 /**
  *
  * @param {Object} st - a piece of state
@@ -20,19 +30,26 @@ ${Nav(state.Links)}
 ${Main(st)}
 ${Footer(st)}
 `;
-  //TODO: Listen for clicks on our menu and log what was clicked on.
-  document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(event) {
-      //'stop the link from linking'
-      event.preventDefault();
 
-      /**
-       * Grab 'textContent from 'whoever' caused this event to fire.
-       * Providing that our 'link names' match up with a key in 'state',
-       * we can pass that piece of 'state' into our 'render' fxn.
-       */
-      render(state[capitalize(event.target.textContent)]);
-    });
-  });
+  router.updatePageLinks();
+  //TODO: Listen for clicks on our menu and log what was clicked on.
 }
-render();
+
+router
+  //'on' is navigo's way of handling a specific type of event
+
+  .on(":page", params => {
+    render(state[capitalize(params.page)]);
+  })
+  .on("/", () => render())
+  //resolve is required for all navigo methods
+  .resolve();
+
+//Axios simplifies the 'fetch' process
+axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  //then grab the results and convert to json
+  .then(results => {
+    state.Blog.posts = results.data;
+  }) //Include a catch for basic error handling when working with promises
+  .catch(error => console.error(error));

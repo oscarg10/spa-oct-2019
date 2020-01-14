@@ -1,4 +1,4 @@
-export default `
+export default st => `
 <div>
         <figure><img src="https://source.unsplash.com/random/800x600" alt="" /></figure>
         <h2>Some Heading</h2>

@@ -1,4 +1,4 @@
-export default `
+export default st => `
 <form action="forms/non-existent-form-handler.php"
 method="POST"
 data-netlify ="true"
