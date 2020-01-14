@@ -1,18 +1,15 @@
 function createArticleHTML(posts) {
   return posts
-    .map(post => {
+    .map(({ title, body }) => {
       return `
   <article>
-    <h2>${post.title}</h2>
-      <p>${post.body}</p>
+    <h2>${title}</h2>
+    <p>${body}</p>
   </article>`;
     })
     .join(" ");
 }
 
-export default st => {
-  return `
-  ${createArticleHTML(st.posts)}
-<p>Loading posts</p>
-`;
-};
+export default ({ posts }) => `
+  ${createArticleHTML(posts)}
+  `;
