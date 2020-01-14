@@ -51,5 +51,13 @@ axios
   //then grab the results and convert to json
   .then(results => {
     state.Blog.posts = results.data;
+    /**
+     * Slice off the slash from 'url'
+     * Capitalize the result
+     * If it is 'Blog', then render the new post
+     */
+    if (capitalize(router.lastRouteResolved().url.slice(1)) === "Blog") {
+      render(state.Blog);
+    }
   }) //Include a catch for basic error handling when working with promises
   .catch(error => console.error(error));
