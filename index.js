@@ -64,11 +64,25 @@ axios
   }) //Include a catch for basic error handling when working with promises
   .catch(error => console.error(error));
 
-db.collection("pictures")
+// axios
+//   // We GET from a RESTful
+//   .get("https://jsonplaceholder.typicode.com/photos")
+//   .then(photos => {
+//     photos.data.forEach(photo =>
+//       db
+//         .collection("pics")
+//         .add(photo)
+//         .then(() => console.log("Added pic"))
+//         .catch(error => console.error(error))
+//     );
+//   });
+//then grab the results and convert to json
+db.collection("pics")
   .get()
   .then(querySnapshot => {
     querySnapshot.forEach(pic => state.Gallery.pics.push(pic.data()));
-  });
-if (capitalize(router.lastRouteResolved().url.slice(1)) === "Blog") {
-  render(state.Blog);
-}
+    if (capitalize(router.lastRouteResolved().url.slice(1)) === "Blog") {
+      render(state.Blog);
+    }
+  })
+  .catch(error => console.error(error));
