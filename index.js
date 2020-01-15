@@ -9,6 +9,8 @@ import Navigo from "navigo";
 
 import axios from "axios";
 
+import { db } from "./firebase";
+
 const router = new Navigo(location.origin);
 
 console.log(router);
@@ -61,3 +63,12 @@ axios
     }
   }) //Include a catch for basic error handling when working with promises
   .catch(error => console.error(error));
+
+db.collection("pictures")
+  .get()
+  .then(querySnapshot => {
+    querySnapshot.forEach(pic => state.Gallery.pics.push(pic.data()));
+  });
+if (capitalize(router.lastRouteResolved().url.slice(1)) === "Blog") {
+  render(state.Blog);
+}

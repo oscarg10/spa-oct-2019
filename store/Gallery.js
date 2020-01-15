@@ -1,4 +1,5 @@
 export default {
   heading: "Gallery",
-  mainContent: "Gallery"
+  mainContent: "Gallery",
+  pics: []
 };
